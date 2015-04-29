@@ -1,11 +1,33 @@
 <div class="pure-g">
   <div class="pure-u-3-4">
-    <form action="/setting" method="post" class="pure-form pure-form-stacked">
-      <h3>设置基础信息</h3>
-      <label for="name">网站名称</label>
-      <input type="text" name="setting[name]" value="6eta">
-
-      <button type="submit" class="pure-button pure-button-primary">save</button>
+    <form action="/setting" method="post" class="pure-form pure-form-aligned">
+      <h2>添加字段</h2>
+      <fieldset>
+        <div class="pure-control-group">
+            <label for="key">Key:</label>
+            <input name="setting[key]" type="text" placeholder="Key">
+        </div>
+        <div class="pure-control-group">
+            <label for="value">Value:</label>
+            <input name="setting[value]" type="text" placeholder="Value">
+        </div>
+        <div class="pure-control-group">
+            <label for="description">Description:</label>
+            <input name="setting[description]" type="text" placeholder="Value">
+        </div>
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">save</button>
+        </div>
+      </fieldset>
     </form>
+    <h2>字段列表</h2>
+    <ul>
+    <% @settings.each do |setting| %>
+      <li>
+      <label for="<%=setting[:key] %>"><%=setting[:description] %></label>
+      <input type="text" name="<%=setting[:key] %>" value="<%= setting[:value] %>">
+      </li>
+    <% end %>
+    </ul>
   </div>
 </div>
