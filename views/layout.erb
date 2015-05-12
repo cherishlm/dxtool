@@ -3,9 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <title><%=yield_content :title %></title>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="/css/pure-min.css">
+  <style>
+    html,body{
+      color:#4b525b;
+      line-height:1.65rem;
+    }
+    h1,h2,h3{
+      font-weight:normal;
+    }
+    .flash{
+      color: #fff;
+      margin: 5px;
+      padding: 5px;
+      font-size: 1rem;
+      text-align:center;
+    }
+    .flash.notice{
+      background:#ffc94c;
+    }
+    .flash.error{
+      background:#d9534f;
+    }
+    .flash.success{
+      background:#41ccb4;
+    }
+
+    .welcome{
+      margin:0 auto;
+      width:80%;
+    }
+    .welcome img{
+      width:100%;
+    }
+    .header{
+      height:1.2rem;
+      padding: 2rem;
+      width:80%;
+      margin:0 auto;
+    }
+    .header h1{
+      margin:0;
+      padding:0;
+    }
+    .header h1 a{
+      text-decoration:none;
+      font-size:1.2rem;
+      color:#4b525b;
+    }
+
+    article{
+      width:80%;
+      margin:0  auto 2rem auto;
+    }
+    article h2 a{
+      font-size:1.6rem;
+      text-decoration:none;
+      color:#4b525b;
+    }
+    article .body{
+      font-size:1rem;
+      margin-top:1rem;
+    }
+    article .time{
+      font-style: italic;
+      font-size:.8rem
+    }
+    footer{
+      width:80%;
+      margin:0 auto;
+    }
+  </style>
 </head>
 <body>
+<header class="header">
+  <h1><a href="/">IT烟台</a></h1>
+</header>
 <%=yield%> 
+<footer>
+  &copy ityantai.com
+</footer>
 </body>
 </html>

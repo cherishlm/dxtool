@@ -1,0 +1,13 @@
+<% content_for :title do %>
+  <%= @article.title %>-IT烟台
+<% end %>
+
+<article>
+  <section id="article-<%= @article.id %>">
+    <h2><a href="/articles/<%= @article.id %>"><%= @article.title %></a></h2>
+    <div class="time"><%= if @article.created_at then @article.created_at.to_datetime.strftime("%Y-%m-%d") end %></div>
+    <div class="body">
+      <%= if @article.content then @article.content end %>
+    </div>
+  </section>
+</article>

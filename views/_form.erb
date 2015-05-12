@@ -1,0 +1,37 @@
+<% if flash %>
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <% if flash[:success] %>
+        <div class="flash success"><%= flash[:success] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="flash error"><%= flash[:error] %></div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% if @article.id %>
+  <form action="/articles/<%=@article.id%>" method="post" class="pure-form pure-form-aligned">
+     <input type="hidden" name="_method" value="put" />
+<% else %>
+  <form action="/articles" method="post" class="pure-form pure-form-aligned">
+<% end %>
+
+  <div class="pure-control-group">
+     <input type="text" class="pure-input-1" name="article[title]" placeholder="标题" value="<%=@article.title %>">
+  </div>
+
+  <div class="pure-control-group">
+     <textarea name="article[content]" rows="30" class="pure-input-1" placeholder="标题"><%=@article.content%></textarea>
+  </div>
+  <div class="pure-control-group">
+     <button type="submit" class="pure-button pure-button-primary">保存</button>
+  </div>
+</form>
+
+<style>
+form{
+  margin:5px;
+}
+</style>
