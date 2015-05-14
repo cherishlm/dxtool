@@ -1,13 +1,14 @@
 <% content_for :title do %>
   IT烟台
 <% end %>
+<%= erb :_header, :layout => false %>
 <div class="pure-img welcome">
   <img src="/img/welcome_0.jpg" alt="welcome">
 </div>
 <article>
   <% @articles.each do |article| %>
     <section id="article-<%= article.id %>">
-      <h2><a href="/articles/<%= article.id %>"><%= article.title %></a></h2>
+      <h2><a href="/articles/<%= article.id %>"><%= h article.title %></a></h2>
       <div class="time"><%= if article.created_at then article.created_at.to_datetime.strftime("%Y-%m-%d") end %></div>
       <div class="body">
         <%= if article.content then article.content[0,100]+'...' end %>
@@ -15,3 +16,4 @@
     </section>
   <% end %>
 </article>
+<%= erb :_footer, :layout => false %>

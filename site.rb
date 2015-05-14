@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'active_record'
 require 'rack-flash'
-require 'erb'
+require 'erubis'
 require 'sinatra/content_for'
 
 ENV['RACK_ENV'] ||= "development"

@@ -20,9 +20,4 @@ ActiveRecord::Schema.define(version: 20150511152837) do
     t.datetime "updated_at"
   end
 
-  create_table "settings", force: :cascade do |t|
-    t.string "key"
-    t.text   "value"
-  end
-
 end
