@@ -17,4 +17,11 @@ helpers do
       false
     end
   end
+
+  def configure(name)
+    unless @config
+      @config = YAML.load(File.open(File.dirname(__FILE__)+'/../config.yml'))
+    end
+    @config[name.to_s]
+  end
 end

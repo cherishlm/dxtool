@@ -11,6 +11,9 @@ use Rack::Flash
 
 ActiveRecord::Base.establish_connection YAML::load(File.open('db/config.yml'))[ENV["RACK_ENV"]]
 
+
+puts @global_setting
+
 set :public_folder, File.dirname(__FILE__) + '/public'
 
 %w{lib models controllers}.each do |dir|

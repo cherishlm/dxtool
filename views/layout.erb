@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><%=yield_content :title %></title>
+  <title><%=yield_content :title %><%= configure( :site ) %></title>
   <link rel="stylesheet" href="/css/pure-min.css">
   <style>
     html,body{
@@ -71,7 +71,7 @@
     }
     footer{
       width:80%;
-      margin:0 auto;
+      margin:2rem auto;
     }
   </style>
 </head>

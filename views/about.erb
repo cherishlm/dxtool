@@ -1,0 +1,25 @@
+<%= erb :_header, :layout => false %>
+<div class="pure-img welcome">
+  <img src="/img/welcome_0.jpg" alt="welcome">
+</div>
+<article>
+<h2>
+DxTool,面向小企业互联网解决方案
+</h2>
+<p>
+DxTool-Team,是注提供小企业的互联网解决方案的团队,我们专注于小企业在互联网垂直方向的技术解决，包括且不限于网站，移动App，微信等方向.
+</p>
+如有咨询或合作:
+<p>
+<form class="pure-form pure-form-aligned">
+  <input type="hidden" name="_csrf">
+  <div class="pure-control-group">
+    <textarea class="pure-input-1-2" name="contract[message]" placeholder="给我们留言，如有需要，请留下联系方式"></textarea>
+  </div>
+  <div class="pure-control-group">
+    <input type="button" class="pure-button pure-button-primary" value="发送" >
+  </div>
+</form>
+</p>
+</article>
+<%= erb :_footer, :layout => false %>
